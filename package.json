@@ -2,7 +2,9 @@
   "name": "@life-dashboard-monorepo/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "serve": "npx nx serve life-dashboard"
+  },
   "private": true,
   "dependencies": {
     "@angular/animations": "~18.2.0",
