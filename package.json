@@ -3,7 +3,9 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "serve": "npx nx serve life-dashboard"
+    "serve": "npx nx serve life-dashboard",
+    "build": "npx nx build life-dashboard",
+    "test": "npx nx test life-dashboard"
   },
   "private": true,
   "dependencies": {
@@ -15,6 +17,12 @@
     "@angular/platform-browser": "~18.2.0",
     "@angular/platform-browser-dynamic": "~18.2.0",
     "@angular/router": "~18.2.0",
+    "@taiga-ui/addon-charts": "^4.7.0",
+    "@taiga-ui/cdk": "^4.7.0",
+    "@taiga-ui/core": "^4.7.0",
+    "@taiga-ui/event-plugins": "^4.0.2",
+    "@taiga-ui/icons": "^4.7.0",
+    "@taiga-ui/kit": "^4.7.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.3"
