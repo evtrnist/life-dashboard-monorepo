@@ -10,37 +10,10 @@
   </div>
 
   <div class="days">
-    <div *ngFor="let day of $daysInMonth()" class="day">
-      <!-- Верхние слоты -->
-      <div class="slot top-left">
-        <ng-content select="[top-left]"></ng-content>
-      </div>
-      <div class="slot top-middle">
-        <ng-content select="[top-middle]"></ng-content>
-      </div>
-      <div class="slot top-right">
-        <div class="day__number">{{ day }}</div>
-      </div>
-
-      <!-- Средние слоты -->
-      <div class="slot middle-left">
-        <ng-content select="[middle-left]"></ng-content>
-      </div>
-      <div class="slot middle"><ng-content select="[middle]"></ng-content></div>
-      <div class="slot middle-right">
-        <ng-content select="[middle-right]"></ng-content>
-      </div>
-
-      <!-- Нижние слоты -->
-      <div class="slot bottom-left">
-        <ng-content select="[bottom-left]"></ng-content>
-      </div>
-      <div class="slot bottom-middle">
-        <ng-content select="[bottom-middle]"></ng-content>
-      </div>
-      <div class="slot bottom-right">
-        <ng-content select="[bottom-right]"></ng-content>
-      </div>
-    </div>
+    <life-dashboard-day
+      *ngFor="let day of $daysInMonth()"
+      [day]="day"
+      [widgets]="$widgets()"
+    ></life-dashboard-day>
   </div>
 </div>

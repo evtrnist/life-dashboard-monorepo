@@ -1,15 +1,23 @@
-import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  input,
+  signal,
+} from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Widget } from '@life-dashboard-monorepo/widget';
+import { DayComponent } from './day/day.component';
 
 @Component({
   selector: 'life-dashboard-calendar',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, DayComponent],
   templateUrl: './calendar.component.html',
   styleUrl: './calendar.component.less',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CalendarComponent {
+  public readonly $widgets = input.required<Widget[]>({ alias: 'widgets' }); // Сигнал для виджетов
   protected $currentDate = signal(new Date()); // Сигнал текущей даты
   protected $daysInMonth = signal<(number | null)[]>([]); // Сигнал для дней текущего месяца
   protected weekDays: string[] = [
